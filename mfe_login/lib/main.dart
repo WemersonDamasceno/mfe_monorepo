@@ -16,13 +16,13 @@ class LoginScreen extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: () {
-                context.go('/register'); // Navega para Criar Conta
+                context.push('/register'); // Navega para Criar Conta
               },
               child: const Text('Criar Conta'),
             ),
             ElevatedButton(
               onPressed: () {
-                context.go('/users'); // Navega para Usuários
+                context.push('/users'); // Navega para Usuários
               },
               child: const Text('Ir para Gestão de Usuários'),
             ),

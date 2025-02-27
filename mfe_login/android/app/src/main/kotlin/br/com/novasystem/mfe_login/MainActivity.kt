@@ -1,0 +1,5 @@
+package br.com.novasystem.mfe_login
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity()

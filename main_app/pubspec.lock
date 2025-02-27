@@ -162,14 +162,14 @@ packages:
   mfe_login:
     dependency: "direct main"
     description:
-      path: "../mfe_login"
+      path: "../mfe/mfe_login"
       relative: true
     source: path
     version: "1.0.0+1"
   mfe_users:
     dependency: "direct main"
     description:
-      path: "../mfe_users"
+      path: "../mfe/mfe_users"
       relative: true
     source: path
     version: "1.0.0+1"

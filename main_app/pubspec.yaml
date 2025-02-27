@@ -16,9 +16,9 @@ dependencies:
   commons_dependencies:
     path: ../commons/commons_dependencies
   mfe_login:
-    path: ../mfe_login
+    path: ../mfe/mfe_login
   mfe_users:
-    path: ../mfe_users
+    path: ../mfe/mfe_users
 
 
 dev_dependencies:

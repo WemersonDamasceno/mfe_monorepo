@@ -1,0 +1,10 @@
+name: main_app
+
+packages:
+  - apps/**
+  - mfe/**
+  - commons/**
+
+command:
+  bootstrap:
+    usePubspecOverrides: true

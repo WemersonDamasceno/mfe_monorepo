@@ -16,15 +16,16 @@ dependencies:
   commons_dependencies:
     path: ../commons/commons_dependencies
   mfe_login:
-    path: ../mfe_login
+    path: ../mfe/mfe_login
   mfe_users:
-    path: ../mfe_users
+    path: ../mfe/mfe_users
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0
+  melos: ^6.3.2
 
 flutter:
   uses-material-design: true

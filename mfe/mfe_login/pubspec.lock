@@ -44,7 +44,7 @@ packages:
   commons_dependencies:
     dependency: "direct main"
     description:
-      path: "../commons/commons_dependencies"
+      path: "../../commons/commons_dependencies"
       relative: true
     source: path
     version: "0.0.1"

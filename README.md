@@ -1,4 +1,4 @@
-# 📦 Microfrontends com Flutter e GoRouter
+# 📦 Microfrontends com Flutter
 
 Este repositório contém um projeto estruturado utilizando **Microfrontends (MFEs)** em Flutter, gerenciando rotas com `GoRouter` e centralizando dependências em `commons_dependencies`. O objetivo é criar um monorepo bem organizado, escalável e modular.
 

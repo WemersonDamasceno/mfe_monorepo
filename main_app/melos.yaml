@@ -1,10 +1,13 @@
-name: main_app
+name: mfe_monorepo
 
 packages:
-  - apps/**
-  - mfe/**
-  - commons/**
+  - ../mfe/**      
+  - ../commons/**   
 
 command:
   bootstrap:
     usePubspecOverrides: true
+
+scripts:
+  analyze:
+    exec: dart analyze .

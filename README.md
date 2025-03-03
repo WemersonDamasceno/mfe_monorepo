@@ -1,8 +1,6 @@
-# 📦 Microfrontends com Flutter e GoRouter
+# 📦 Microfrontends com Flutter
 
 Este repositório contém um projeto estruturado utilizando **Microfrontends (MFEs)** em Flutter, gerenciando rotas com `GoRouter` e centralizando dependências em `commons_dependencies`. O objetivo é criar um monorepo bem organizado, escalável e modular.
-
----
 
 ## 🏗 Estrutura do Projeto
 
@@ -40,6 +38,56 @@ commons/               # Dependências compartilhadas
 melos.yaml             # Configuração do Melos para gerenciar os pacotes
 ```
 
+## 🚀 Configuração do Ambiente
+
+1. **Clone o repositório:**
+   ```sh
+   git clone https://github.com/WemersonDamasceno/mfe_monorepo.git
+   cd mfe_monorepo
+   ```
+2. **Instale o Melos:**
+   ```sh
+   dart pub global activate melos
+   ```
+3. **Execute o bootstrap para sincronizar as dependências:**
+   ```sh
+   melos bootstrap
+   ```
+4. **Verifique os pacotes disponíveis:**
+   ```sh
+   melos list
+   ```
+5. **Inicie o aplicativo principal:**
+   ```sh
+   cd main_app
+   flutter run
+   ```
+
+---
+
+## 📌 Gerenciamento de Dependências com Melos
+
+O `Melos` gerencia os pacotes no monorepo, garantindo que as dependências sejam sincronizadas corretamente. No nosso caso, estamos usando diferentes versões do pacote `http` para cada MFE:
+
+- **`mfe_users`** usa `http: ^1.3.0`
+- **`mfe_login`** usa `http: ^1.0.0`
+
+### Configuração no `melos.yaml`
+
+```yaml
+name: mfe_monorepo
+packages:
+  - main_app
+  - mfe/mfe_login
+  - mfe/mfe_users
+  - commons/commons_dependencies
+
+scripts:
+  bootstrap: melos bootstrap
+  clean: melos exec -- flutter clean
+```
+
+Essa configuração permite que cada MFE tenha suas próprias dependências sem conflitos.
 
 ---
 
@@ -57,8 +105,8 @@ import 'package:mfe_users/router.dart';
 final GoRouter router = GoRouter(
   initialLocation: '/login',
   routes: [
-    ...loginRoutes,
-    ...usersRoutes,
+    ...loginRoutes
+    ...usersRoutes
   ],
 );
 ```
@@ -106,58 +154,12 @@ final List<GoRoute> usersRoutes = [
 
 ---
 
-## 📦 Configuração do `pubspec.yaml`
-
-### `mfe` (Microfrontends)
-```yaml
-dependencies:
-  commons_dependencies:
-    path: ../../commons/commons_dependencies
-```
-
-### `main_app`
-```yaml
-dependencies:  
-  mfe_login:
-    path: ../mfe/mfe_login
-  mfe_users:
-    path: ../mfe/mfe_users
-```
-
----
-
 ## 🛠 Ferramentas Utilizadas
 
 - **Flutter**: Framework para desenvolvimento mobile
 - **GoRouter**: Gerenciamento de rotas
 - **Melos**: Gerenciamento de pacotes no monorepo
 - **Commons Dependencies**: Centralização de pacotes compartilhados
-
-
----
-
-## 🚀 Configuração do Ambiente
-
-1. **Clone o repositório:**
-   ```sh
-   git clone https://github.com/WemersonDamasceno/mfe_monorepo.git
-   cd mfe_monorepo
-   ```
-2. **Instale o Melos:**
-   ```sh
-   dart pub global activate melos
-   ```
-3. **Execute o bootstrap para sincronizar as dependências:**
-   ```sh
-   melos bootstrap
-   ```
-4. **Inicie o aplicativo principal:**
-   ```sh
-   cd main_app
-   flutter run
-   ```
-
----
 
 ## 📌 Contribuindo
 
@@ -168,11 +170,6 @@ dependencies:
 5. Abra um Pull Request 🚀
 
 ---
-
-## 🏆 Créditos
-
-Desenvolvido por **Wemerson Damasceno** ❤️
-
 Se gostou, dê uma ⭐ no repositório!
 
 ---
